@@ -11,7 +11,7 @@ class ReportController extends Controller
     {
         $messages = LaravelGmail::message()->preload()->all();
         #return $messages[0]->payload->parts[0]->body->data;
-        return $messages;
+        return $messages[0]->payload->headers[31]->value;
     }
     
 }
