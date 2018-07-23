@@ -11,7 +11,7 @@ class ReportController extends Controller
     {
         $messages = LaravelGmail::message()->preload()->all();
         #return $messages[0]->payload->parts[0]->body->data;
-        return $messages[0];
+        return $messages;
     }
 
     //This function will loop through all of the headers to find the subject and returns the array of subjects.
