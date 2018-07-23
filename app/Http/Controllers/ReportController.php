@@ -9,7 +9,7 @@ class ReportController extends Controller
     
     public function mail()
     {
-        $messages = LaravelGmail::message()->subject('Support Report - 22/07/18')->->preload()->all();
+        $messages = LaravelGmail::message()->subject('Support Report - 22/07/18')->preload()->all();
         return $messages;
     }
     
