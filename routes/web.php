@@ -28,5 +28,5 @@ Route::get('/oauth/gmail/callback', function (){
 
 Route::get('/oauth/gmail/logout', function (){
     LaravelGmail::logout(); //It returns exception if fails
-    return redirect()->to('/mail');
+    return redirect()->to('/');
 });
