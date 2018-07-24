@@ -20,7 +20,6 @@ class ReportController extends Controller
     public function mail()
 	{
 		$messages = LaravelGmail::message()->preload()->all($pageToken=3);
-                dd($messages);
 
 		foreach ( $messages as $message )
 			$subjects[] = $message->getSubject();
