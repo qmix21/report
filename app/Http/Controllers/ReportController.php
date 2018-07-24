@@ -7,13 +7,26 @@ use LaravelGmail;
 class ReportController extends Controller
 {
     
-    public function mail()
-    {
-        $messages = LaravelGmail::message()->preload()->all();
+   // public function mail()
+   // {
+   //     $messages = LaravelGmail::message()->preload()->all();
         #return $messages[0]->payload->parts[0]->body->data;
-        $subjects = $this->getSubject($messages);
-        return $subjects;
-    }
+   //     $subjects = $this->getSubject($messages);
+   //     return $subjects;
+
+
+   // }
+
+    public function mail()
+	{
+		$messages = LaravelGmail::message()->preload()->all();
+                dd($messages);
+
+		foreach ( $messages as $message )
+			$subjects[] = $message->getSubject();
+		
+		return $subjects;
+	}
 
     //This function will loop through all of the headers to find the subject and returns the array of subjects.
     public function getSubject($messages)
