@@ -20,19 +20,22 @@ class ReportController extends Controller
     public function mail()
 	{
 		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
-
+		$i =0;
 		foreach ( $messages as $message )
 		{
+			
 			if(strpos($message->getSubject(), 'Support Report')!== false )
 			{
 				if(strpos($message->getSubject(),'RE:') !== true)
 				{
 
- 				$subjects[] += ["ID"=>$message->getId(),'Subject'=>$message->getSubject()];
+ 				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject()];
+ 				$i= $i +1;
 				}
 				
 
 			}
+			
 		}
 		return $subjects;
 	}
