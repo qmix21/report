@@ -25,8 +25,12 @@ class ReportController extends Controller
 		{
 			if(strpos($message->getSubject(), 'Support Report')!== false )
 			{
+				if(strpos($message->getSubject(),'RE:') == true)
+				{
 				$ids[] = $message->getId();
  				$subjects[] = $message->getSubject();
+				}
+				
 
 			}
 		}
