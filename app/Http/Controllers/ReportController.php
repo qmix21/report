@@ -23,7 +23,7 @@ class ReportController extends Controller
 
 		foreach ( $messages as $message )
 		{
-			if(strpos($message->getSubejct(), 'Support Report')!== false )
+			if(strpos($message->getSubject(), 'Support Report')!== false )
 			{
 				$ids[] = $message->getId();
  				$subjects[] = $message->getSubject();
