@@ -30,9 +30,7 @@ class ReportController extends Controller
 
 			}
 		}
-		
-
-		return $messages;
+		return $subjects;
 	}
     
 }
