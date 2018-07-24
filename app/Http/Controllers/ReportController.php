@@ -19,31 +19,12 @@ class ReportController extends Controller
 
     public function mail()
 	{
-		$messages = LaravelGmail::message()->preload()->all($pageToken=3);
+		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
 
 		foreach ( $messages as $message )
 			$subjects[] = $message->getSubject();
 		
 		return $subjects;
 	}
-
-    //This function will loop through all of the headers to find the subject and returns the array of subjects.
-    public function getSubject($messages)
-    {
-    	$arr = array();
-    	foreach($messages as $m)
-    	{
-    		foreach($m->payload->headers as $h)
-    		{
-    			if($h->name == 'Subject')
-    			{
-    				array_push($arr, $h->value);
-    			}
-    		}
-
-    	}
-    	return $arr;
-    }
-
     
 }
