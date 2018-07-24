@@ -20,7 +20,6 @@ class ReportController extends Controller
     public function mail()
 	{
 		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
-		$parts[] = $messages[0]->payload->parts;
 		$i =0;
 		foreach ( $messages as $message )
 		{
@@ -35,7 +34,7 @@ class ReportController extends Controller
 				else
 				{
 
-				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),];
+				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),'Body'=>base64_decode($message->payload->parts[0]->body->data)];
  				$i= $i +1;
 				}
 				
@@ -44,7 +43,7 @@ class ReportController extends Controller
 			}
 			
 		}
-		return $parts;
+		return $subjects;
 	}
     
 }
