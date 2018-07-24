@@ -22,9 +22,17 @@ class ReportController extends Controller
 		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
 
 		foreach ( $messages as $message )
-			$subjects[] = $message->getSubject();
+		{
+			if(strpos($message->getSubejct(), 'Support Report')!== false )
+			{
+				$ids[] = $message->getId();
+ 				$subjects[] = $message->getSubject();
+
+			}
+		}
 		
-		return $subjects;
+
+		return $messages;
 	}
     
 }
