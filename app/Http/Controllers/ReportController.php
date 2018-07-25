@@ -34,7 +34,7 @@ class ReportController extends Controller
 				else
 				{
 
-				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),'Body'=>base64_decode($message->payload->parts[0]->body->data)];
+				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),'Body'=>utf8_encode(base64_decode($message->payload->parts[0]->body->data))];
  				$i= $i +1;
 				}
 				
