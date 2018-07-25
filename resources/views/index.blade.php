@@ -3,11 +3,11 @@
 
 
 <div class="container">
-<form action="/mail" method="GET">
+<form action="/blog/public/mail" method="GET">
 	<button type="submit">Get Emails</button>
 </form>
 <hr>
-<form action="/refresh" method="GET">
+<form action="/blog/public/refresh" method="GET">
 	<button type="submit">Refresh</button>
 </form>
 
