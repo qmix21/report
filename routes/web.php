@@ -32,6 +32,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/index','ReportController@index');
-Route::get('/blog/public/mail',"ReportController@mail");
-Route::get('/blog/public/refresh',"ReportController@refresh");
+Route::get('/mail',"ReportController@mail");
+Route::get('/refresh',"ReportController@refresh");
 
