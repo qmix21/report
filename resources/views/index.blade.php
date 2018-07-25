@@ -4,7 +4,7 @@
 
 <div class="container">
 <form action="/mail" method="GET">
-	<buton type="submit">Get Emails</buton>
+	<button type="submit">Get Emails</button>
 </form>
 <hr>
 <form action="/refresh" method="GET">
