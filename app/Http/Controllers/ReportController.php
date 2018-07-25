@@ -34,7 +34,8 @@ class ReportController extends Controller
 				else
 				{
 
-				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),'Body'=>utf8_encode(base64_decode($message->payload->parts[0]->body->data))];
+					$body = base64_decode($message->payload->parts[0]->body->data);
+				$subjects[$i] = ["ID"=>$message->getId(),'Subject'=>$message->getSubject(),'Body'=>utf8_encode($body)];
  				$i= $i +1;
 				}
 				
@@ -44,6 +45,11 @@ class ReportController extends Controller
 			
 		}
 		return $subjects;
+	}
+
+	public function index()
+	{
+		return view('index');
 	}
     
 }
