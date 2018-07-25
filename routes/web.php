@@ -11,18 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+
+
+//Gmail Functions *****************
 Route::get('/oauth/gmail', function (){
     return LaravelGmail::redirect();
 });
-
-
-Route::get('/index','ReportController@index');
-Route::get('/mail',"ReportController@mail");
-
 Route::get('/oauth/gmail/callback', function (){
     LaravelGmail::makeToken();
     return redirect()->to('/index');
@@ -32,3 +27,11 @@ Route::get('/oauth/gmail/logout', function (){
     LaravelGmail::logout(); //It returns exception if fails
     return redirect()->to('/');
 });
+//**********************************
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/index','ReportController@index');
+Route::get('/blog/public/mail',"ReportController@mail");
+Route::get('/refresh',"ReportController@refresh");
+
