@@ -31,7 +31,7 @@ class ReportController extends Controller
 	public function test()
 	{
 		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
-		return $messages;
+		return $messages[0]->payload->parts[0]->body->data;
 	}
 
 	public function refresh()
