@@ -41,7 +41,39 @@ class ReportController extends Controller
 
 		//Skip upto 10, 13 and 15
 		$report = $this->base64Fix(Report::find(20)->body);
-		return preg_split("/((\r?\n)|(\r\n?))/", $report);
+		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
+		$arr = [];
+		foreach($data as $d)
+		{
+			$i = 0;
+			if($i <= 10)
+			{
+				$i++;
+			}
+			else
+			{
+				if($i == 13 || $i == 15)
+				{
+					$i++;
+				}
+				else
+				{
+					if($d == '')
+					{
+						break;
+					}
+					else
+					{
+						array_push($arr, $d)
+
+					}
+					break;
+				}
+				break;
+			}
+			break;
+		}
+		return $arr;
 			
     // do stuff with $line
 
