@@ -20,7 +20,13 @@ class ReportController extends Controller
 
     public function mail()
 	{
-		return Report::all();
+		$reports = Report::all();
+
+		foreach($reports as $report)
+		{
+			$report->body = base64_decode($report->body);
+		}
+		return $reports;
 	}
 
 	public function index()
