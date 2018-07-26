@@ -53,8 +53,11 @@ class ReportController extends Controller
 			}
 			else
 			{
-				if($i == 13 || $i == 15)
+				if($i == 13)
 				{
+					$i++;
+				}
+				elseif ($i == 15) {
 					$i++;
 				}
 				else
