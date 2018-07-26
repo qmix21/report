@@ -33,6 +33,8 @@ class ReportController extends Controller
 		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
 		$i =0;
 		$report = new Report();
+		Report::truncate();
+
 		foreach ( $messages as $message )
 		{
 			
@@ -45,10 +47,10 @@ class ReportController extends Controller
 				}
 				else
 				{
-
 				$report->msgID = $message->getId();
 				$report->subject = $message->getSubject();
-				$report->body = base64_decode($message->payload->parts[0]->body->data);
+				$report->body = $message->payload->parts[0]->body->data;
+				$report->save();
 				}
 				
 				
@@ -56,12 +58,7 @@ class ReportController extends Controller
 			}
 			
 		}
-
-		$report->save();
-
-	
-	
-	return redirect()->route('index');
+	return redirect()->route('/index');
 	}
     
 }
