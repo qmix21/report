@@ -69,6 +69,7 @@ class ReportController extends Controller
 					else
 					{
 						array_push($arr, $d);
+						$i++;
 
 					}
 					
