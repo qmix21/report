@@ -24,7 +24,7 @@ class ReportController extends Controller
 
 		foreach($reports as $report)
 		{
-			$report->body = base64_decode($report->body);
+			$report->body = base64_decode($report->body,true);
 			$report->body =  preg_replace('/[^A-Za-z0-9\-]/', '-', $report->body); 
 		}
 		return $reports;
