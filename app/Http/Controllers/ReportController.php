@@ -71,7 +71,7 @@ class ReportController extends Controller
 				}
 				break;
 			}
-			break;
+			
 		}
 		return $arr;
 			
