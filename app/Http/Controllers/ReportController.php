@@ -24,7 +24,8 @@ class ReportController extends Controller
 
 		foreach($reports as $report)
 		{
-			$report->body = imap_base64($report->body);
+			$report->body = str_replace(' ', '+', $report->body);
+			$report->body =  base64_decode($report->body);
 			//$report->body =  preg_replace('/[^A-Za-z0-9\-]/', '-', $report->body); 
 		}
 		return $reports;
