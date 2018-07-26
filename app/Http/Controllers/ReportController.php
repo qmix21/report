@@ -58,7 +58,7 @@ class ReportController extends Controller
 			}
 			
 		}
-	return redirect()->route('/index');
+	return redirect()->to('/index');
 	}
     
 }
