@@ -43,9 +43,10 @@ class ReportController extends Controller
 		$report = $this->base64Fix(Report::find(20)->body);
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
 		$arr = [];
+		$i = 0;
 		foreach($data as $d)
 		{
-			$i = 0;
+			
 			if($i <= 10)
 			{
 				$i++;
@@ -67,9 +68,9 @@ class ReportController extends Controller
 						array_push($arr, $d);
 
 					}
-					break;
+					
 				}
-				break;
+				
 			}
 			
 		}
