@@ -40,10 +40,10 @@ class ReportController extends Controller
 	{
 		$report = $this->base64Fix(Report::find(1)->body);
 		foreach(preg_split("/((\r?\n)|(\r\n?))/", $report) as $line){
-			print $line;
+			return $line
     // do stuff with $line
 } 
-		return $report;
+		//return $report;
 	}
 
 	public function refresh()
