@@ -38,7 +38,7 @@ class ReportController extends Controller
 
 	public function test()
 	{
-		$report = Report::find(1);
+		$report = $this->base64Fix(Report::find(1)->body);
 		return $report;
 	}
 
@@ -82,6 +82,14 @@ class ReportController extends Controller
 			
 		}
 	return redirect()->to('/index');
+	}
+
+
+
+	private function base64Fix($string)
+	{
+		$decoded = strtr($string, '-_','+/');
+		return $string =  base64_decode($decoded);
 	}
     
 }
