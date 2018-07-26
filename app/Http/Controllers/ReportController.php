@@ -64,7 +64,7 @@ class ReportController extends Controller
 					}
 					else
 					{
-						array_push($arr, $d)
+						array_push($arr, $d);
 
 					}
 					break;
