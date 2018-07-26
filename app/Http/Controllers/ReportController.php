@@ -38,7 +38,7 @@ class ReportController extends Controller
 
 	public function test()
 	{
-		$report = $this->base64Fix(Report::find(1)->body);
+		$report = $this->base64Fix(Report::find(2)->body);
 		return preg_split("/((\r?\n)|(\r\n?))/", $report);
 			
     // do stuff with $line
