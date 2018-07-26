@@ -38,8 +38,8 @@ class ReportController extends Controller
 
 	public function test()
 	{
-		$messages = LaravelGmail::message()->from('lee.gibbon@hostopia.com.au')->preload()->all();
-		return $messages;
+		$report = Report::find(1);
+		return $report;
 	}
 
 	public function refresh()
