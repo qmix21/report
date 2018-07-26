@@ -24,7 +24,7 @@ class ReportController extends Controller
 
 		foreach($reports as $report)
 		{
-			$report->body = utf8_decode(mb_convert_encoding(base64_decode($report->body), 'UTF-8','UTF-8'))); 
+			$report->body = utf8_decode(mb_convert_encoding(base64_decode($report->body), 'UTF-8','UTF-8')); 
 		}
 		return $reports;
 	}
