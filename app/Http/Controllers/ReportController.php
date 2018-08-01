@@ -21,8 +21,16 @@ class ReportController extends Controller
     public function mail()
 	{
 		$reports = Report::all();
-		$data = preg_split("/((\r?\n)|(\r\n?))/", $reports);
-		return $data;
+		$arr = [];
+		foreach($reports as $report)
+		{
+			$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
+			$results = $this->correctResults($data);
+
+			array_push($arr, $results);
+
+		}
+		return $arr;
 	}
 
 	public function index()
@@ -37,7 +45,6 @@ class ReportController extends Controller
 		$results = [];
 		$report = Report::find(20)->body;
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
-		$results = $this->correctResults($data);
 		
 		return $results;
 			
@@ -88,6 +95,10 @@ class ReportController extends Controller
 		}
 	return redirect()->to('/index');
 	}
+
+
+
+
 
 
 
