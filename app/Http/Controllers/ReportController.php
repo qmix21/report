@@ -98,8 +98,8 @@ class ReportController extends Controller
 	private function base64Fix($string)
 	{
 		$decoded = strtr($string, '-_','+/');
-		 $string =  base64_decode($decoded);
-		 return preg_split("/((\r?\n)|(\r\n?))/", $string);
+		return $string =  base64_decode($decoded);
+		
 	}
 
 	private function correctResults($arr)
