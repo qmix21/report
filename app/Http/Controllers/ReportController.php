@@ -39,7 +39,7 @@ class ReportController extends Controller
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
 		$results = $this->correctResults($data);
 		
-		return $report;
+		return $data;
 			
     // do stuff with $line
 
@@ -99,7 +99,7 @@ class ReportController extends Controller
 	{
 		$decoded = strtr($string, '-_','+/');
 		return $string =  base64_decode($decoded);
-		
+
 	}
 
 	private function correctResults($arr)
