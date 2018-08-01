@@ -35,7 +35,7 @@ class ReportController extends Controller
 
 		//Skip upto 10, 13 and 15
 		$results = [];
-		$report = $this->base64Fix(Report::find(20)->body);
+		$report = Report::find(20)->body;
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
 		$results = $this->correctResults($data);
 		
@@ -98,7 +98,8 @@ class ReportController extends Controller
 	private function base64Fix($string)
 	{
 		$decoded = strtr($string, '-_','+/');
-		return $string =  base64_decode($decoded);
+		 $string =  base64_decode($decoded);
+		 return preg_split("/((\r?\n)|(\r\n?))/", $string);
 	}
 
 	private function correctResults($arr)
