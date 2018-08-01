@@ -34,11 +34,12 @@ class ReportController extends Controller
 	{
 
 		//Skip upto 10, 13 and 15
+		$results = [];
 		$report = $this->base64Fix(Report::find(20)->body);
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
 		$results = $this->correctResults($data);
 		
-		return $results;
+		return $data;
 			
     // do stuff with $line
 
