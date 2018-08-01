@@ -117,6 +117,8 @@ class ReportController extends Controller
 	{
 		$i = 0;
 		$data = [];
+		$checkTime = false;
+		$checkEnd = false;
 		foreach($arr as $a)
 		{
 			if($a === "> 4 Interactions per hour")
@@ -128,7 +130,35 @@ class ReportController extends Controller
 			}
 			else
 			{
-				array_push($data, $a);
+
+				if($a ==="Time # of Ratings Rating %")
+				{
+					$checkTime = true;
+				}
+				if(strpos($a, "Staff total"))
+				{
+					$checkEnd = true;
+				}
+				if($checkTime)
+				{
+					if($a ==="")
+					{
+
+					}
+					else
+					{
+						if(!$checkEnd)
+						{
+							array_push($data, $a);
+
+						}
+						else
+						{
+							break;
+						}
+					}
+
+				}
 				
 
 			}
