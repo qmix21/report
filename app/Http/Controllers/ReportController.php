@@ -39,7 +39,7 @@ class ReportController extends Controller
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
 		$results = $this->correctResults($data);
 		
-		return $data;
+		return $results;
 			
     // do stuff with $line
 
