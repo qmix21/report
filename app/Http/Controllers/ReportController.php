@@ -128,28 +128,6 @@ class ReportController extends Controller
 			}
 			else
 			{
-
-			if($i <= 10)
-			{
-				$i++;
-			}
-			else
-			{
-				if($i == 13)
-				{
-					$i++;
-				}
-				elseif ($i == 15) {
-					$i++;
-				}
-				else
-				{
-					if($a == '')
-					{
-						break;
-					}
-					else
-					{
 						array_push($data, $a);
 						$i++;
 
