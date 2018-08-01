@@ -151,6 +151,7 @@ class ReportController extends Controller
 							break;
 						}
 					}
+				}
 				if($a ==="Time # of Ratings Rating %")
 				{
 					$checkTime = true;
