@@ -157,10 +157,10 @@ class ReportController extends Controller
 					$checkTime = true;
 				}
 				#Staff total
-				#if(strpos($a, "Staff") !== false && strpos($a, "total")!== false)
-				#{
-				#	$checkEnd = true;
-				#}
+				if(strpos($a, "Staff") !== false && strpos($a, "total")!== false)
+				{
+					$checkEnd = true;
+				}
 
 				}
 				
