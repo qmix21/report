@@ -121,10 +121,10 @@ class ReportController extends Controller
 		$checkEnd = false;
 		foreach($arr as $a)
 		{
-			if($a === "> 4 Interactions per hour")
+			if(strpos($a, ">")!== false && strpos($a, "Interactions")!== false)
 			{
 			}
-			elseif($a === "< 4 Interactions per hour")
+			elseif(strpos($a, "<")!== false && strpos($a, "Interactions")!== false)
 			{
 
 			}
@@ -137,7 +137,7 @@ class ReportController extends Controller
 				{
 					$checkEnd = true;
 				}
-				
+
 				if($checkTime)
 				{
 					if($a ==="")
