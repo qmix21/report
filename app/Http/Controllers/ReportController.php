@@ -161,7 +161,7 @@ class ReportController extends Controller
 				#	$checkEnd = true;
 				#}
 
-				#}
+				}
 				
 
 			}
