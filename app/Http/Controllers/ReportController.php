@@ -108,12 +108,15 @@ class ReportController extends Controller
 				$report->subject = $message->getSubject();
 				if($message->payload->parts[0]->body->data)
 				{
-					$report->body = $this->base64Fix($message->payload->parts[0]->body->data);
+					$data = $this->base64Fix($message->payload->parts[0]->body->data);
+					$report->body = preg_split("/((\r?\n)|(\r\n?))/", $data);
+
 
 				}
 				else
 				{
-					$report->body = $this->base64Fix($message->payload->parts[0]->parts[0]->body->data);
+					$data = $this->base64Fix($message->payload->parts[0]->parts[0]->body->data);
+					$report->body = preg_split("/((\r?\n)|(\r\n?))/", $data);
 
 				}
 				$report->save();
