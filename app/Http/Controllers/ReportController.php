@@ -131,14 +131,8 @@ class ReportController extends Controller
 			else
 			{
 
-				if($a ==="Time # of Ratings Rating %")
-				{
-					$checkTime = true;
-				}
-				if(strpos($a, "Staff total"))
-				{
-					$checkEnd = true;
-				}
+			
+
 				if($checkTime)
 				{
 					if($a ==="")
@@ -157,6 +151,14 @@ class ReportController extends Controller
 							break;
 						}
 					}
+				if($a ==="Time # of Ratings Rating %")
+				{
+					$checkTime = true;
+				}
+				if(strpos($a, "Staff total") !== false)
+				{
+					$checkEnd = true;
+				}
 
 				}
 				
