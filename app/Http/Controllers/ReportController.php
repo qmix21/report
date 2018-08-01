@@ -166,15 +166,10 @@ class ReportController extends Controller
 				
 
 			}
-					
-		}
-				
-			
-		
-			
-		
 		return $data;
+	
+		}
 		
 	}
     
-}
+
