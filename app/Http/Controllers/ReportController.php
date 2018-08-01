@@ -128,17 +128,17 @@ class ReportController extends Controller
 			}
 			else
 			{
-						array_push($data, $a);
-						$i++;
-
-					}
-					
-				}
+				array_push($data, $a);
 				
+
 			}
-		
-			}
+					
 		}
+				
+			
+		
+			
+		
 		return $data;
 		
 	}
