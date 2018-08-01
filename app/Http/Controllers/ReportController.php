@@ -84,7 +84,7 @@ class ReportController extends Controller
 				{
 					$report->body = $this->base64Fix($message->payload->parts[0]->parts[0]->body->data);
 
-				}[]
+				}
 				$report->save();
 				}
 				
