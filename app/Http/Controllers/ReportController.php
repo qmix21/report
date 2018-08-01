@@ -108,12 +108,12 @@ class ReportController extends Controller
 				$report->subject = $message->getSubject();
 				if($message->payload->parts[0]->body->data)
 				{
-					$report->body = $message->payload->parts[0]->body->data;
+					$report->body = base64Fix($message->payload->parts[0]->body->data);
 
 				}
 				else
 				{
-					$report->body = $message->payload->parts[0]->parts[0]->body->data;
+					$report->body = base64Fix($message->payload->parts[0]->parts[0]->body->data);
 
 				}
 				$report->save();
