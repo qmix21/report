@@ -24,7 +24,7 @@ class ReportController extends Controller
 		$arr = [];
 		foreach($reports as $report)
 		{
-			$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
+			$data = preg_split("/((\r?\n)|(\r\n?))/", $report->body);
 			$results = $this->correctResults($data);
 
 			array_push($arr, $results);
