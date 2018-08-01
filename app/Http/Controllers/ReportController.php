@@ -21,14 +21,8 @@ class ReportController extends Controller
     public function mail()
 	{
 		$reports = Report::all();
-
-		foreach($reports as $report)
-		{
-			$report->body = strtr($report->body, '-_','+/');
-			$report->body =  base64_decode($report->body);
-			//$report->body =  preg_replace('/[^A-Za-z0-9\-]/', '-', $report->body); 
-		}
-		return $reports;
+		$data = preg_split("/((\r?\n)|(\r\n?))/", $reports);
+		return $data;
 	}
 
 	public function index()
@@ -42,43 +36,9 @@ class ReportController extends Controller
 		//Skip upto 10, 13 and 15
 		$report = $this->base64Fix(Report::find(20)->body);
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
-		$arr = [];
-		$i = 0;
-		foreach($data as $d)
-		{
-			
-			if($i <= 10)
-			{
-				$i++;
-			}
-			else
-			{
-				if($i == 13)
-				{
-					$i++;
-				}
-				elseif ($i == 15) {
-					$i++;
-				}
-				else
-				{
-					if($d == '')
-					{
-						break;
-					}
-					else
-					{
-						array_push($arr, $d);
-						$i++;
-
-					}
-					
-				}
-				
-			}
-			
-		}
-		return $arr;
+		$results = $this->correctResults($data);
+		
+		return $results;
 			
     // do stuff with $line
 
@@ -108,15 +68,13 @@ class ReportController extends Controller
 				$report->subject = $message->getSubject();
 				if($message->payload->parts[0]->body->data)
 				{
-					$data = $this->base64Fix($message->payload->parts[0]->body->data);
-					$report->body = preg_split("/((\r?\n)|(\r\n?))/", $data);
+					$report->body = $this->base64Fix($message->payload->parts[0]->body->data);
 
 
 				}
 				else
 				{
-					$data = $this->base64Fix($message->payload->parts[0]->parts[0]->body->data);
-					$report->body = preg_split("/((\r?\n)|(\r\n?))/", $data);
+					$report->body = $this->base64Fix($message->payload->parts[0]->parts[0]->body->data);
 
 				}
 				$report->save();
@@ -132,10 +90,55 @@ class ReportController extends Controller
 
 
 
+
+## Custom Private Functions Below This Line --------
+
+
 	private function base64Fix($string)
 	{
 		$decoded = strtr($string, '-_','+/');
 		return $string =  base64_decode($decoded);
+	}
+
+	private function correctResults($arr)
+	{
+		$i = 0;
+		$data = [];
+		foreach($arr as $a)
+		{
+			if($i <= 10)
+			{
+				$i++;
+			}
+			else
+			{
+				if($i == 13)
+				{
+					$i++;
+				}
+				elseif ($i == 15) {
+					$i++;
+				}
+				else
+				{
+					if($a == '')
+					{
+						break;
+					}
+					else
+					{
+						array_push($data, $a);
+						$i++;
+
+					}
+					
+				}
+				
+			}
+			
+		}
+		return $data;
+		}
 	}
     
 }
