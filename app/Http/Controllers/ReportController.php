@@ -119,7 +119,14 @@ class ReportController extends Controller
 		$data = [];
 		foreach($arr as $a)
 		{
-			if(!strpos($a, '<'))
+			if($a === "> 4 Interactions per hour")
+			{
+			}
+			elseif($a === "< 4 Interactions per hour")
+			{
+
+			}
+			else
 			{
 
 			if($i <= 10)
@@ -151,8 +158,8 @@ class ReportController extends Controller
 				}
 				
 			}
-		}
-			
+		
+			}
 		}
 		return $data;
 		
