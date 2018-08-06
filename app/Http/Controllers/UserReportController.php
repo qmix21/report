@@ -11,7 +11,7 @@ class UserReportController extends Controller
 	public function create()
 	{
 
-		$arr = App::call('Http\Controllers\ReportController@mail');
+		$arr = \App::call('Http\Controllers\ReportController@mail');
 
 		return $arr;
 	}
