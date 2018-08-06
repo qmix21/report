@@ -22,8 +22,9 @@ class UserReportController extends Controller
 				if(strpos($user, 'Legend')!== false)
 				{
 					$user = str_replace('Legend','', $user);
-					$arr = $user;
 				}
+				$arr = explode(' ', $user);
+
 			}
 		}
 		#$userReport = new UserReport();
