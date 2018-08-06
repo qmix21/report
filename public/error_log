@@ -1,0 +1,8 @@
+[24-Jul-2018 10:38:22 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2162688 bytes) in /home/jamesredirect/public_html/blog/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 1739
+[25-Jul-2018 10:10:14 UTC] PHP Fatal error:  Class 'PDO' not found in /home/jamesredirect/public_html/blog/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 1246
+[26-Jul-2018 08:10:05 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/jamesredirect/public_html/blog/vendor/symfony/http-foundation/Response.php on line 491
+[26-Jul-2018 08:10:05 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[26-Jul-2018 08:10:08 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/jamesredirect/public_html/blog/vendor/symfony/http-foundation/Response.php on line 491
+[26-Jul-2018 08:10:08 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[26-Jul-2018 08:10:48 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/jamesredirect/public_html/blog/vendor/symfony/http-foundation/Response.php on line 491
+[26-Jul-2018 08:10:48 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0

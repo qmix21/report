@@ -1,0 +1,21 @@
+[23-Jul-2018 05:36:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Polyfill\Mbstring\iconv() in /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/Mbstring.php:114
+Stack trace:
+#0 /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/bootstrap.php(19): Symfony\Polyfill\Mbstring\Mbstring::mb_convert_encoding('Call to undefin...', 'UTF-8', 'ASCII')
+#1 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(1167): mb_convert_encoding('Call to undefin...', 'utf8', 'ASCII')
+#2 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(755): Symfony\Component\Console\Application->splitStringByWidth('Call to undefin...', 189)
+#3 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(729): Symfony\Component\Console\Application->doRenderException(Object(Symfony\Component\Debug\Exception\FatalThrowableError), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /home/jamesredirect/public_html/blog/vendor/laravel/framework/src/Illuminate/ in /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/Mbstring.php on line 114
+[23-Jul-2018 05:36:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Polyfill\Mbstring\iconv() in /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/Mbstring.php:114
+Stack trace:
+#0 /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/bootstrap.php(19): Symfony\Polyfill\Mbstring\Mbstring::mb_convert_encoding('Uncaught Error:...', 'UTF-8', 'ASCII')
+#1 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(1167): mb_convert_encoding('Uncaught Error:...', 'utf8', 'ASCII')
+#2 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(755): Symfony\Component\Console\Application->splitStringByWidth('Uncaught Error:...', 189)
+#3 /home/jamesredirect/public_html/blog/vendor/symfony/console/Application.php(729): Symfony\Component\Console\Application->doRenderException(Object(Symfony\Component\Debug\Exception\FatalErrorException), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /home/jamesredirect/public_html/blog/vendor/laravel/framework/src/Illuminate/ in /home/jamesredirect/public_html/blog/vendor/symfony/polyfill-mbstring/Mbstring.php on line 114
+[23-Jul-2018 05:36:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function Symfony\Polyfill\Mbstring\iconv() in phar:///usr/bin/composer/vendor/symfony/polyfill-mbstring/Mbstring.php:661
+Stack trace:
+#0 phar:///usr/bin/composer/vendor/symfony/polyfill-mbstring/bootstrap.php(48): Symfony\Polyfill\Mbstring\Mbstring::mb_strwidth('  [Composer\\Dow...', 'ASCII')
+#1 phar:///usr/bin/composer/vendor/symfony/console/Helper/Helper.php(54): mb_strwidth('  [Composer\\Dow...', 'ASCII')
+#2 phar:///usr/bin/composer/vendor/symfony/console/Application.php(654): Symfony\Component\Console\Helper\Helper::strlen('  [Composer\\Dow...')
+#3 phar:///usr/bin/composer/vendor/symfony/console/Application.php(127): Symfony\Component\Console\Application->renderException(Object(Composer\Downloader\TransportException), Object(Symfony\Component\Console\Output\StreamOutput))
+#4 phar:///usr/bin/composer/src/Composer/Console/Application.php(100): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Outpu in phar:///usr/bin/composer/vendor/symfony/polyfill-mbstring/Mbstring.php on line 661
