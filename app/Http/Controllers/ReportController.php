@@ -41,7 +41,6 @@ class ReportController extends Controller
 	public function test()
 	{
 
-		//Skip upto 10, 13 and 15
 		$results = [];
 		$report = Report::find(20)->body;
 		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
