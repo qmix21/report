@@ -18,8 +18,8 @@ class UserReportController extends Controller
 		{
 			if(strpos($a, 'Legend')!== false)
 			{
-				str_replace($a, '', 'Legend')
-				$arr = $a
+				str_replace($a, '', 'Legend');
+				$arr = $a;
 			}
 		}
 		#$userReport = new UserReport();
