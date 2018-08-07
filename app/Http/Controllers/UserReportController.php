@@ -89,7 +89,7 @@ class UserReportController extends Controller
 			#$arr = $a;
 		}
 		
-		return $subject;
+		return $subject['subject'];
 	}
 
 
