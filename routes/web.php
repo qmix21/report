@@ -37,4 +37,5 @@ Route::get('/refresh',"ReportController@refresh");
 Route::get('/test',"ReportController@test");
 
 Route::get('/userreport','UserReportController@create');
+Route::get('/report/{date}','UserReportController@index');
 

@@ -99,9 +99,10 @@ class UserReportController extends Controller
 	}
 
 
-	public function index()
+	public function index($date)
 	{
-
+		$report = UserReport::where('date',$date)->get();
+		return $report;
 	}
 
 
