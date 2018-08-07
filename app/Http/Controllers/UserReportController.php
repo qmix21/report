@@ -16,7 +16,7 @@ class UserReportController extends Controller
 
 		foreach($arr as $a)
 		{
-			foreach ($a->body as $user)
+			foreach ($a as $user)
 			{
 
 				#if(strpos($user, 'Legend')!== false)
