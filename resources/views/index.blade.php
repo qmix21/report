@@ -3,7 +3,7 @@
 
 
 <div class="container">
-<form action="/blog/public/mail" method="GET">
+<form action="/blog/public/test" method="GET">
 	<button type="submit">Get Emails</button>
 </form>
 <hr>
