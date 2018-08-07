@@ -87,6 +87,7 @@ class UserReportController extends Controller
 				$exp = explode('-',$reports[0]->subject);
 				$subject = $exp[1];
 				$subject = preg_replace('/\s+/', '', $subject);
+				$subject = str_replace('/','-', $subject);
 				$userReport->date = $subject;
 
 				$userReport->save();
