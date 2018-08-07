@@ -38,7 +38,7 @@ class UserReportController extends Controller
 							$i++;
 							break;
 						case 1:
-							$userReport->name = $userReport->name + " " + $b;
+							$userReport->name = $userReport->name ." " . $b;
 							$i++;
 							break;
 						case 2:
