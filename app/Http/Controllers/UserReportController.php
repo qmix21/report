@@ -21,7 +21,7 @@ class UserReportController extends Controller
 
 				if(strpos($user, 'Legend')!== false)
 				{
-					$user = str_replace('Legend','', $user);
+					$user = str_replace('Legend','', $user->body);
 				}
 				$arr = explode(' ', $user);
 				$arr = $user;
