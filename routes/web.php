@@ -32,7 +32,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/index','ReportController@index');
-Route::get('/mail',"ReportController@mail");
+#Route::get('/mail',"ReportController@mail");
 Route::get('/refresh',"ReportController@refresh");
 Route::get('/test',"ReportController@test");
 
