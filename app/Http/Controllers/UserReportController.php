@@ -24,7 +24,7 @@ class UserReportController extends Controller
 					$user = str_replace('Legend','', $user);
 				}
 				$arr = explode(' ', $user);
-				$arr = $a->msgID;
+				$arr = $a['msgID'];
 
 			}
 			#$arr = $a;
