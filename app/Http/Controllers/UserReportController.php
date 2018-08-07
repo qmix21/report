@@ -82,9 +82,11 @@ class UserReportController extends Controller
 				}
 				$userReport->msgID = $a['msgID'];
 
+				## Getting Date so when searching brings up that dates report stats.
 				$reports = Report::where('msgID',$a['msgID'])->get();
 				$exp = explode('-',$reports[0]->subject);
 				$subject = $exp[1];
+				$userReport->date = $subject;
 
 				$userReport->save();
 
@@ -92,7 +94,7 @@ class UserReportController extends Controller
 			#$arr = $a;
 		}
 		
-		return $subject;
+		return UserReport::all();
 	}
 
 
