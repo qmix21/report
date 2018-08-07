@@ -82,7 +82,7 @@ class UserReportController extends Controller
 				}
 				$userReport->msgID = $a['msgID'];
 
-				$subject = Report::where('msgID',$a['msgID'])->get()->subject;
+				$subject = Report::where('msgID',$a['msgID'])->get();
 				$userReport->save();
 
 			}
