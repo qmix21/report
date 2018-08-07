@@ -18,19 +18,75 @@ class UserReportController extends Controller
 		{
 			foreach ($a['body'] as $user)
 			{
+				$userReport = new UserReport();
 
 				if(strpos($user, 'Legend')!== false)
 				{
 					$user = str_replace('Legend','', $user);
 				}
-				$arr = explode(' ', $user);
-				$msgID = $a['msgID'];
+				$body = explode(' ', $user);
+				$userReport->msgID = $a['msgID'];
+
+				$i = 0;
+				foreach($body as $b)
+				{
+
+					switch($i)
+					{
+						case 0:
+							$userReport->name = $b;
+							$i++;
+							break;
+						case 1:
+							$userReport->name = $userReport->name + " " + $b;
+							$i++;
+							break;
+						case 2:
+							$userReport->inbound = $b;
+							$i++;
+							break;
+						case 3:
+							$userReport->outbound =$b;
+							$i++;
+							break;
+						case 4:
+							$userReport->tickets = $b;
+							$i++;
+							break;
+						case 5:
+							$userReport->perhour = $b;
+							$i++;
+							break;
+						case 6:
+							$userReport->avgcall = $b;
+							$i++;
+							break;
+						case 7:
+							$userReport->talktime = $b;
+							$i++;
+							break;
+						case 8:
+							$userReport->ratingsnum = $b;
+							$i++;
+							break;
+						case 9:
+							$userReport->ratingsperc = $b;
+							$i++;
+							break;
+						case 10:
+							break;							
+
+
+					}
+					
+				}
+				$userReport->save();
 
 			}
 			#$arr = $a;
 		}
-		#$userReport = new UserReport();
-		return $arr;
+		
+		return UserReport::all();
 	}
 
 
