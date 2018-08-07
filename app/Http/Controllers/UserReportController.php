@@ -13,7 +13,7 @@ class UserReportController extends Controller
 	{
 
 		$arr = \App::call('App\Http\Controllers\ReportController@mail');
-
+		UserReport::truncate();
 		foreach($arr as $a)
 		{
 			foreach ($a['body'] as $user)
@@ -25,7 +25,6 @@ class UserReportController extends Controller
 					$user = str_replace('Legend','', $user);
 				}
 				$body = explode(' ', $user);
-				$userReport->msgID = $a['msgID'];
 
 				$i = 0;
 				foreach($body as $b)
@@ -80,6 +79,8 @@ class UserReportController extends Controller
 					}
 					
 				}
+				$userReport->msgID = $a['msgID'];
+
 				$userReport->save();
 
 			}
