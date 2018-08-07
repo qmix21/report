@@ -27,7 +27,7 @@ class UserReportController extends Controller
 			#	$arr = $user;
 
 			}
-			$arr = $a
+			$arr = $a;
 		}
 		#$userReport = new UserReport();
 		return $arr;
