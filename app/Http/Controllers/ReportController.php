@@ -41,11 +41,9 @@ class ReportController extends Controller
 	public function test()
 	{
 
-		$results = [];
-		$report = Report::find(20)->body;
-		$data = preg_split("/((\r?\n)|(\r\n?))/", $report);
+		$report = Report::all();
 		
-		return $results;
+		return $report;
 			
     // do stuff with $line
 
