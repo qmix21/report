@@ -86,6 +86,7 @@ class UserReportController extends Controller
 				$reports = Report::where('msgID',$a['msgID'])->get();
 				$exp = explode('-',$reports[0]->subject);
 				$subject = $exp[1];
+				$subject = preg_replace('/\s+/', '', $subject);
 				$userReport->date = $subject;
 
 				$userReport->save();
@@ -95,6 +96,12 @@ class UserReportController extends Controller
 		}
 		
 		return UserReport::all();
+	}
+
+
+	public function index()
+	{
+
 	}
 
 
