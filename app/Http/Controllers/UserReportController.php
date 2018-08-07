@@ -16,16 +16,17 @@ class UserReportController extends Controller
 
 		foreach($arr as $a)
 		{
-			foreach ($a->body as $user)
+			foreach ($a as $user)
 			{
 
-				if(strpos($user, 'Legend')!== false)
+				if(strpos($user->body, 'Legend')!== false)
 				{
 					$user = str_replace('Legend','', $user);
 				}
 				$arr = explode(' ', $user);
 
 			}
+			$arr = $a;
 		}
 		#$userReport = new UserReport();
 		return $arr;
