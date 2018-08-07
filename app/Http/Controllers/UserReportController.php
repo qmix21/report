@@ -30,7 +30,7 @@ class UserReportController extends Controller
 			$arr = $a;
 		}
 		#$userReport = new UserReport();
-		return $arr;
+		return $arr->body;
 	}
 
 
