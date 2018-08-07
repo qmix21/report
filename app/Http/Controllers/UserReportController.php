@@ -19,11 +19,11 @@ class UserReportController extends Controller
 			foreach ($a as $user)
 			{
 
-				if(strpos($user, 'Legend')!== false)
-				{
-					$user = str_replace('Legend','', $user->body);
-				}
-				$arr = explode(' ', $user);
+				#if(strpos($user, 'Legend')!== false)
+				#{
+			#		$user = str_replace('Legend','', $user);
+			#	}
+			#	$arr = explode(' ', $user);
 				$arr = $user;
 
 			}
