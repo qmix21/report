@@ -16,21 +16,21 @@ class UserReportController extends Controller
 
 		foreach($arr as $a)
 		{
-			foreach ($a as $user)
+			foreach ($a['body'] as $user)
 			{
 
-				#if(strpos($user, 'Legend')!== false)
-				#{
-			#		$user = str_replace('Legend','', $user);
-			#	}
-			#	$arr = explode(' ', $user);
-			#	$arr = $user;
+				if(strpos($user, 'Legend')!== false)
+				{
+					$user = str_replace('Legend','', $user);
+				}
+				$arr = explode(' ', $user);
+				$arr = $a->msgID;
 
 			}
-			$arr = $a;
+			#$arr = $a;
 		}
 		#$userReport = new UserReport();
-		return $arr->body;
+		return $arr;
 	}
 
 
