@@ -81,13 +81,14 @@ class UserReportController extends Controller
 				}
 				$userReport->msgID = $a['msgID'];
 
+				$subject = Report::where('msgID',$a['msgID'])->get()->subject;
 				$userReport->save();
 
 			}
 			#$arr = $a;
 		}
 		
-		return UserReport::all();
+		return $subject;
 	}
 
 
