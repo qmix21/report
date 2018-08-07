@@ -14,6 +14,7 @@ class UserReportController extends Controller
 
 		$arr = \App::call('App\Http\Controllers\ReportController@mail');
 		UserReport::truncate();
+		$subject = [];
 		foreach($arr as $a)
 		{
 			foreach ($a['body'] as $user)
