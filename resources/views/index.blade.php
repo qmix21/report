@@ -17,6 +17,8 @@
       <option value="{{$date->date}}">{{$date->date}}</option>
     @endforeach
   </select>
+  <button type="submit">Search</button>
+</form>
 <hr>
 <form action="/blog/public/refresh" method="GET">
 	<button type="submit">Refresh</button>
