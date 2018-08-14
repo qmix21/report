@@ -100,9 +100,9 @@ class UserReportController extends Controller
 	}
 
 
-	public function index($date)
+	public function index($item_id)
 	{
-		$report = UserReport::where('date',$date)->get();
+		$report = UserReport::where('date',$item_id)->get();
 		return $report;
 	}
 
