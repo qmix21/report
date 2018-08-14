@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use LaravelGmail;
 use App\Report;
+use App\UserReport;
 class ReportController extends Controller
 {
     
@@ -35,7 +36,8 @@ class ReportController extends Controller
 
 	public function index()
 	{
-		return view('index');
+		$dates = UserReport::all('date')->distinct();
+		return View::Make('index',compact('dates',$dates));
 	}
 
 	public function test()
