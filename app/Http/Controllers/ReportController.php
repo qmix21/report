@@ -36,7 +36,7 @@ class ReportController extends Controller
 
 	public function index()
 	{
-		$dates = UserReport::all('date')->unique();
+		$dates = UserReport::select('date')->distinct()->get();
 		return view('index',compact('dates',$dates));
 	}
 
