@@ -36,15 +36,15 @@ class ReportController extends Controller
 
 	public function index()
 	{
+		//gets all dates, gets the distinct dates and passes it to the view
 		$dates = UserReport::select('date')->distinct()->get();
 		return view('index',compact('dates',$dates));
 	}
 
 	public function test()
 	{
-
+		//Function to get ALL reports
 		$report = Report::all();
-		
 		return $report;
 			
     // do stuff with $line

@@ -11,7 +11,7 @@
 <button type="submit">Get Reports</button>
 </form>
 <div class="col-sm-8">
-	<form action="/blog/public/getdatereport" method="get">
+	<form action="/blog/public/getdatereport/{item_id}" method="get">
 	  <select class="form-control" name="item_id">
     @foreach($dates as $date)
       <option value="{{$date->date}}">{{$date->date}}</option>
