@@ -37,7 +37,7 @@ class ReportController extends Controller
 	public function index()
 	{
 		$dates = UserReport::all('date');
-		return View::Make('index',compact('dates',$dates));
+		return view('index',compact('dates',$dates));
 	}
 
 	public function test()
