@@ -109,7 +109,7 @@ class UserReportController extends Controller
 	public function nameReport(Request $request)
 	{
 		$report = UserReport::where('name','like','%'.$request->get('name').'%')->get();
-		return $report;
+		return $requst->get('name');
 	}
 
 
