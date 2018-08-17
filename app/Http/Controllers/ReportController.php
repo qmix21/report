@@ -45,11 +45,11 @@ class ReportController extends Controller
 			$answer = preg_match('/\\d/', $name);
 			if($answer == 1)
 			{
-				array_push($correctNames, $name);
 
 			}
 			else
 			{
+				array_push($correctNames, $name);
 
 			}
 		}
