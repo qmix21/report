@@ -24,5 +24,6 @@ class ChartController extends Controller
     	}
 
     	$chart = Lava::LineChart('MyStocks',$stockstable);
+    	return view('chart');
     }
 }
