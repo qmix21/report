@@ -114,7 +114,7 @@ class UserReportController extends Controller
 
 	public function nameDateReport(Request $request)
 	{
-		$report = UserReport::where('date',$request->get('dates'))->where('name','like','%'.$request->get('name').'%')->get();
+		$report = UserReport::where('date',$request->get('date'))->where('name','like','%'.$request->get('name').'%')->get();
 		return $report;
 	}
 
