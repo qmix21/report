@@ -38,7 +38,7 @@ class ChartController extends Controller
 
     	foreach($names as $name)
     	{
-    		$reportstable->addRow([$name, rand(800,1000),rand(800,1000)]);
+    		$reportstable->addRow([$name->name, rand(800,1000),rand(800,1000)]);
     	}
     	
 
