@@ -43,13 +43,13 @@ class ReportController extends Controller
 		foreach($names as $name)
 		{
 			$answer = preg_match('/\\d/', $name);
-			if($answer > 0)
+			if($answer === '1')
 			{
+				array_push($correctNames, $name);
 
 			}
 			else
 			{
-				array_push($correctNames, $name);
 			}
 		}
 		return view('index',compact('dates',$dates),compact('names',$correctNames));
