@@ -43,16 +43,17 @@ class ReportController extends Controller
 		foreach($names as $name)
 		{
 			$answer = preg_match('/\\d/', $name);
-			if($answer === '1')
+			if($answer == 1)
 			{
 				array_push($correctNames, $name);
 
 			}
 			else
 			{
+
 			}
 		}
-		return $answer;#view('index',compact('dates',$dates),compact('names',$correctNames));
+		return $correctNames;#view('index',compact('dates',$dates),compact('names',$correctNames));
 	}
 
 	public function test()
