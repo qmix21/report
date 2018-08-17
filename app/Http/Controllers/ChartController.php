@@ -20,7 +20,7 @@ class ChartController extends Controller
 
     	for($i =1; $i < 30; $i++)
     	{
-    		$stockstable->addRow(['2018-08-'.$a, rand(800,1000),rand(800,1000)]);
+    		$stockstable->addRow(['2018-08-'.$i, rand(800,1000),rand(800,1000)]);
     	}
 
     	$chart = Lava::LineChart('MyStocks',$stockstable);
