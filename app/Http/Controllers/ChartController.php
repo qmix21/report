@@ -12,18 +12,36 @@ class ChartController extends Controller
 
     public function index()
     {
+
+    	$names = UserReport::select('name')->distinct()->get();
+		$correctNames = [];
+		foreach($names as $name)
+		{
+			$answer = preg_match('/\\d/', $name);
+			if($answer == 1)
+			{
+
+			}
+			else
+			{
+				array_push($correctNames, $name);
+
+			}
+			$names = $correctNames;
+
     	$stockstable = Lava::DataTable();
-    	$stockstable->addDateColumn("Date")
-    				->addNumberColumn('Projected')
-    				->addNumberColumn('Official');
+    	$stockstable->addStringColumn("Name")
+    				->addNumberColumn('Calls')
+    				->addNumberColumn('Tickets');
 
 
-    	for($i =1; $i < 5; $i++)
+    	foreach($names as $name)
     	{
-    		$stockstable->addRow(['2018-08-'.$i, rand(800,1000),rand(800,1000)]);
+    		$reportstable->addRow([$name, rand(800,1000),rand(800,1000)]);
     	}
+    	
 
-    	$chart = Lava::BarChart('MyStocks',$stockstable);
+    	$chart = Lava::BarChart('MyReports',$stockstable);
     	return view('chart');
     }
 }
