@@ -42,7 +42,7 @@ class ChartController extends Controller
     	}
     	
 
-    	$chart = Lava::BarChart('MyReports',$reportstable);
+    	$chart = Lava::columnchart('MyReports',$reportstable);
     	return view('chart');
     }
 }
