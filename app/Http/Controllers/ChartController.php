@@ -33,7 +33,7 @@ class ChartController extends Controller
     	}
     	
 
-    	$chart = Lava::ColumnChart('MyReports',$reportstable,['title'=>'ReportChart' . "2018-08-02",'titleTextStyle'=>['color' => '#eb6b2c','fontSize' => 10]]);
+    	$chart = Lava::ColumnChart('MyReports',$reportstable,['title'=>'ReportChart' . " " .$r->date,'titleTextStyle'=>['color' => '#eb6b2c','fontSize' => 10]]);
 		return view('chart');
 	    }
 }
