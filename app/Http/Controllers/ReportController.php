@@ -52,8 +52,9 @@ class ReportController extends Controller
 				array_push($correctNames, $name);
 
 			}
+			$names = $correctNames;
 		}
-		return view('index',compact('dates',$dates),compact('names',$correctNames));
+		return view('index',compact('dates',$dates),compact('names',$names));
 	}
 
 	public function test()
