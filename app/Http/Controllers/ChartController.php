@@ -18,12 +18,12 @@ class ChartController extends Controller
     				->addNumberColumn('Official');
 
 
-    	for($i =1; $i < 30; $i++)
+    	for($i =1; $i < 5; $i++)
     	{
     		$stockstable->addRow(['2018-08-'.$i, rand(800,1000),rand(800,1000)]);
     	}
 
-    	$chart = Lava::LineChart('MyStocks',$stockstable);
+    	$chart = Lava::BarChart('MyStocks',$stockstable);
     	return view('chart');
     }
 }
