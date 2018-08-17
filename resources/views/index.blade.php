@@ -36,7 +36,6 @@
       <option value="{{$date->date}}">{{$date->date}}</option>
     @endforeach
   </select>
-  <button type="submit">Search</button>
 	<form action="/blog/public/getnamereport" method="GET">
 	  <select class="form-control" name="name">
     @foreach($names as $name)
