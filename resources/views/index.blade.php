@@ -19,7 +19,7 @@
   </select>
   <button type="submit">Search</button>
  </div>
- 
+</form>
  <div class="col-sm-8">
 	<form action="/blog/public/getnamereport" method="GET">
 	  <select class="form-control" name="names">
@@ -28,7 +28,6 @@
     @endforeach
   </select>
   <button type="submit">Search</button>
-</form>
 </form>
 <hr>
 <form action="/blog/public/refresh" method="GET">
