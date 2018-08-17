@@ -44,7 +44,7 @@ class ReportController extends Controller
 		{
 			if(preg_match('/\\d/', 123))
 			{
-				array_push($correctNames, $name);
+				#array_push($correctNames, $name);
 
 			}
 			else
