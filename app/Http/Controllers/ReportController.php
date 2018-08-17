@@ -59,7 +59,7 @@ class ReportController extends Controller
 	{
 		//Function to get ALL reports
 		$report = Report::all();
-		return preg_match('/\\d/', '123') > 0;
+		return preg_match('/\\d/', '123');
 			
     // do stuff with $line
 
