@@ -30,8 +30,8 @@ class ChartController extends Controller
 		}
 		$names = $correctNames;
 
-    	$stockstable = Lava::DataTable();
-    	$stockstable->addStringColumn("Name")
+    	$reportstable = Lava::DataTable();
+    	$reportstable->addStringColumn("Name")
     				->addNumberColumn('Calls')
     				->addNumberColumn('Tickets');
 
@@ -42,7 +42,7 @@ class ChartController extends Controller
     	}
     	
 
-    	$chart = Lava::BarChart('MyReports',$stockstable);
+    	$chart = Lava::BarChart('MyReports',$reportstable);
     	return view('chart');
     }
 }
