@@ -42,7 +42,7 @@ class ReportController extends Controller
 		$correctNames = [];
 		foreach($names as $name)
 		{
-			if(preg_match('~[0-9]~', $name))
+			if(preg_match('/\\d/', $name))
 			{
 			}
 			else
