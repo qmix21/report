@@ -53,7 +53,7 @@ class ReportController extends Controller
 
 			}
 		}
-		return $correctNames;#view('index',compact('dates',$dates),compact('names',$correctNames));
+		return view('index',compact('dates',$dates),compact('names',$correctNames));
 	}
 
 	public function test()
