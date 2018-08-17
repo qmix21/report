@@ -39,7 +39,19 @@ class ReportController extends Controller
 		//gets all dates, gets the distinct dates and passes it to the view
 		$dates = UserReport::select('date')->distinct()->get();
 		$names = UserReport::select('name')->distinct()->get();
-		return view('index',compact('dates',$dates),compact('names',$names));
+		$correctNames = []
+		foreach($names as $name)
+		{
+			if(1 === preg_match('~[0-9]~', $name))
+			{
+			}
+			else
+			{
+				array_push($correctNames, $name);
+
+			}
+		}
+		return view('index',compact('dates',$dates),compact('names',$correctNames));
 	}
 
 	public function test()
