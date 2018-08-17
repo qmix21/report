@@ -18,6 +18,16 @@
     @endforeach
   </select>
   <button type="submit">Search</button>
+ </div>
+ <div class="col-sm-8">
+	<form action="/blog/public/getnamereport" method="GET">
+	  <select class="form-control" name="names">
+    @foreach($names as $name)
+      <option value="{{$name->name}}">{{$name->name}}</option>
+    @endforeach
+  </select>
+  <button type="submit">Search</button>
+</form>
 </form>
 <hr>
 <form action="/blog/public/refresh" method="GET">

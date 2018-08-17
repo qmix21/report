@@ -106,5 +106,11 @@ class UserReportController extends Controller
 		return $report;
 	}
 
+	public function nameReport(Request $request)
+	{
+		$report = UserReport::where('name',$request->get('name'))->get();
+		return $report;
+	}
+
 
 }
