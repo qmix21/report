@@ -27,7 +27,8 @@ class ChartController extends Controller
 				array_push($correctNames, $name);
 
 			}
-			$names = $correctNames;
+		}
+		$names = $correctNames;
 
     	$stockstable = Lava::DataTable();
     	$stockstable->addStringColumn("Name")
