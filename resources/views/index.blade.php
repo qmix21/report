@@ -19,6 +19,7 @@
   </select>
   <button type="submit">Search</button>
  </div>
+ 
  <div class="col-sm-8">
 	<form action="/blog/public/getnamereport" method="GET">
 	  <select class="form-control" name="names">

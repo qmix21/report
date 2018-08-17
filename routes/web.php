@@ -38,5 +38,6 @@ Route::get('/test',"ReportController@test");
 
 Route::get('/getdatereport','UserReportController@index');
 Route::get('/userreport','UserReportController@create');
+route::get('/getuserreport','UserReportController@userReport';)
 #Route::get('/report/{date}','UserReportController@index');
 
