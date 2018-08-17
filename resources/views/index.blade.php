@@ -11,7 +11,7 @@
 <button type="submit">Get Reports</button>
 </form>
 <div class="col-sm-8">
-	<form action="/blog/public/getdatereport" method="GET">
+	<form action="/blog/public/chart" method="GET">
 	  <select class="form-control" name="item_id">
     @foreach($dates as $date)
       <option value="{{$date->date}}">{{$date->date}}</option>
@@ -30,7 +30,7 @@
   <button type="submit">Search</button>
 </form>
 <div class="col-sm-8">
-	<form action="/blog/public/chart" method="GET">
+	<form action="/blog/public/getnamedatereport" method="GET">
 	  <select class="form-control" name="date">
     @foreach($dates as $date)
       <option value="{{$date->date}}">{{$date->date}}</option>

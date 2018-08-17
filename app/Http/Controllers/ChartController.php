@@ -14,7 +14,7 @@ class ChartController extends Controller
     {
 
 
-    	$report = UserReport::where('date',$request->get('date'))->where('name','like','%'.$request->get('name').'%')->get();
+    	$report = UserReport::where('date',$request->get('item_id'))->get();
 	
     	$names = UserReport::select('name')->distinct()->get();
 		$correctNames = [];
