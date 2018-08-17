@@ -16,32 +16,15 @@ class ChartController extends Controller
 
     	$report = UserReport::where('date',$request->get('item_id'))->get();
 	
-    	$names = UserReport::select('name')->distinct()->get();
-		$correctNames = [];
-		foreach($names as $name)
-		{
-			$answer = preg_match('/\\d/', $name);
-			if($answer == 1)
-			{
-
-			}
-			else
-			{
-				array_push($correctNames, $name);
-
-			}
-		}
-		$names = $correctNames;
-
     	$reportstable = Lava::DataTable();
     	$reportstable->addStringColumn("Name")
     				->addNumberColumn('Calls')
     				->addNumberColumn('Tickets');
 
 
-    	foreach($names as $name)
+    	foreach($report as $r)
     	{
-    		$reportstable->addRow([$name->name, rand(800,1000),rand(800,1000)]);
+    		$reportstable->addRow([$r->name, ($r->inbound+$r->outbound),$r->tickets]);
     	}
     	
 
