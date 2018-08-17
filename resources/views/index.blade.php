@@ -30,14 +30,13 @@
   <button type="submit">Search</button>
 </form>
 <div class="col-sm-8">
-	<form action="/blog/public/getnamedatereport" method="GET">
+	<form action="/blog/public/chart" method="GET">
 	  <select class="form-control" name="date">
     @foreach($dates as $date)
       <option value="{{$date->date}}">{{$date->date}}</option>
     @endforeach
   </select>
-	<form action="/blog/public/getnamereport" method="GET">
-	  <select class="form-control" name="name">
+  	  <select class="form-control" name="name">
     @foreach($names as $name)
       <option value="{{$name->name}}">{{$name->name}}</option>
     @endforeach

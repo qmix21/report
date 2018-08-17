@@ -10,9 +10,12 @@ class ChartController extends Controller
 {
     
 
-    public function index()
+    public function index(Request $request)
     {
 
+
+    	$report = UserReport::where('date',$request->get('date'))->where('name','like','%'.$request->get('name').'%')->get();
+	
     	$names = UserReport::select('name')->distinct()->get();
 		$correctNames = [];
 		foreach($names as $name)
@@ -42,7 +45,7 @@ class ChartController extends Controller
     	}
     	
 
-    	$chart = Lava::ColumnChart('MyReports',$reportstable,['title'=>'ReportChart' . "2018-08-02",'titleTextStyle'=>['color' => '#eb6b2c','fontSize' => 14]]);
-    	return view('chart');
-    }
+    	$chart = Lava::ColumnChart('MyReports',$reportstable,['title'=>'ReportChart' . "2018-08-02",'titleTextStyle'=>['color' => '#eb6b2c','fontSize' => 10]]);
+		return $report;
+	    }
 }
