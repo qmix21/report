@@ -24,7 +24,12 @@ class ChartController extends Controller
 
     	foreach($report as $r)
     	{
-    		$reportstable->addRow([$r->name, ($r->inbound+$r->outbound),$r->tickets]);
+    		$answer = preg_match('/\\d/', $r->name);
+    		if($answer != 1)
+    		{
+    			$reportstable->addRow([$r->name, ($r->inbound+$r->outbound),$r->tickets]);
+
+    		}
     	}
     	
 
